@@ -173,3 +173,48 @@ function checkGuess() {
 }
 ```
 
+## Increment number of guesses and clean up input field
+
+```javascript
+  guessCount++;
+  guessField.value = '';
+  guessField.focus();
+```
+
+This three lines get us ready for the next guess to be submitted. 
+We add 1 to the `guessCount` variable so the player uses up their turn (`++` is an incrementation operation; increment by 1).
+We empty the value out of the form text field.
+We set the focus again to the input field, ready for the next guess to be entered.
+
+* Now the function looks like this:
+```javascript
+function checkGuess() {
+  var userGuess = Number(guessField.value);
+  if (guessCount === 1) {
+    guesses.textContent = 'Previous guesses: ';
+  }
+  guesses.textContent += userGuess + ' ';
+ 
+  if (userGuess === randomNumber) {
+    lastResult.textContent = 'Congratulations! You got it right!';
+    lastResult.style.backgroundColor = 'green';
+    lowOrHi.textContent = '';
+    setGameOver();
+  } else if (guessCount === 10) {
+    lastResult.textContent = '!!!GAME OVER!!!';
+    setGameOver();
+  } else {
+    lastResult.textContent = 'Wrong!';
+    lastResult.style.backgroundColor = 'red';
+    if(userGuess < randomNumber) {
+      lowOrHi.textContent = 'Last guess was too low!';
+    } else if(userGuess > randomNumber) {
+      lowOrHi.textContent = 'Last guess was too high!';
+    }
+  }
+ 
+  guessCount++;
+  guessField.value = '';
+  guessField.focus();
+}
+```
