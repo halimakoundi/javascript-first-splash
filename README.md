@@ -218,3 +218,7 @@ function checkGuess() {
   guessField.focus();
 }
 ```
+
+We got through this! Yay \o/
+
+Yo can now safely go back to the [original page](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash) to continue the tutorial :)
