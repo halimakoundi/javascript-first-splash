@@ -89,3 +89,36 @@ function checkGuess() {
   }
 }
 ```
+
+## Game is over: do something else if condition is not met
+
+```javascript
+else if (guessCount === 10) {
+    lastResult.textContent = '!!!GAME OVER!!!';
+    setGameOver();
+  }
+```
+ This `else if(){ }` structure checks whether this turn is the user's last turn. 
+ If it is, the program does the same thing as in the previous block, except with a game over message instead of a congratulations message.
+ 
+* Now the function looks like this:
+```javascript
+function checkGuess() {
+    var userGuess = Number(guessField.value);
+    if (guessCount === 1) {
+      guesses.textContent = 'Previous guesses: ';
+    }
+    guesses.textContent += userGuess + ' ';
+  
+   if (userGuess === randomNumber) {
+      lastResult.textContent = 'Congratulations! You got it right!';
+      lastResult.style.backgroundColor = 'green';
+      lowOrHi.textContent = '';
+      setGameOver();
+    } else if (guessCount === 10) {
+      lastResult.textContent = '!!!GAME OVER!!!';
+      setGameOver();
+  }
+}
+```
+
