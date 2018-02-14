@@ -1,6 +1,6 @@
 # A first splash into JavaScript
 
-This is taking the tutorial provided by Mozilla [MDN Web Doc](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash) and breaking down the main function `checkGuess()` .
+This is taking the tutorial provided by Mozilla [MDN Web Doc](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash#Conditionals) and breaking down the main function `checkGuess()` .
 
 ## Storing information
 
@@ -221,4 +221,4 @@ function checkGuess() {
 
 We got through this! Yay \o/
 
-Yo can now safely go back to the [original page](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash) to continue the tutorial :)
+Yo can now safely go back to the [original page](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash#Events) to continue the tutorial :)
