@@ -122,3 +122,54 @@ function checkGuess() {
 }
 ```
 
+## Continue guessing
+
+```javascript 
+ else {
+    lastResult.textContent = 'Wrong!';
+    lastResult.style.backgroundColor = 'red';
+ }
+```
+
+This block chained onto the end of this code (the `else { }`) contains code that is only run if neither of the other two tests returns true (i.e. the player didn't guess right, but they have more guesses left). In this case we tell them they are wrong.
+
+## Giving clues: Guess was too low or too high
+
+```javascript 
+    if(userGuess < randomNumber) {
+      lowOrHi.textContent = 'Last guess was too low!';
+    } else if(userGuess > randomNumber) {
+      lowOrHi.textContent = 'Last guess was too high!';
+    }
+```
+We then perform another conditional test to check whether the guess was higher or lower than the answer, displaying a further message as appropriate to tell them higher or lower.
+
+* Now the function looks like this:
+```javascript
+function checkGuess() {
+    var userGuess = Number(guessField.value);
+    if (guessCount === 1) {
+      guesses.textContent = 'Previous guesses: ';
+    }
+    guesses.textContent += userGuess + ' ';
+  
+   if (userGuess === randomNumber) {
+      lastResult.textContent = 'Congratulations! You got it right!';
+      lastResult.style.backgroundColor = 'green';
+      lowOrHi.textContent = '';
+      setGameOver();
+    } else if (guessCount === 10) {
+      lastResult.textContent = '!!!GAME OVER!!!';
+      setGameOver();
+  } else {
+      lastResult.textContent = 'Wrong!';
+      lastResult.style.backgroundColor = 'red';
+        if(userGuess < randomNumber) {
+          lowOrHi.textContent = 'Last guess was too low!';
+        } else if(userGuess > randomNumber) {
+          lowOrHi.textContent = 'Last guess was too high!';
+        }
+  }
+}
+```
+
